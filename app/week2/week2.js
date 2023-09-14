@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import StudentInfo from "../studentInfo";
 
 export default function Week2() {
     return (
@@ -7,12 +6,7 @@ export default function Week2() {
             <header>
                 <h1>My Shopping List</h1>
             </header>
-            <p>
-                Name: James Bareng
-                Course section: CPRG 306 F
-            </p>
-            <Link href="https://github.com/">GitHub</Link>
-            </main>
+            <StudentInfo />
+        </main>
     )
-
 }
