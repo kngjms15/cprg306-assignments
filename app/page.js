@@ -3,7 +3,9 @@ import StudentInfo from './studentInfo.js';
 import Item from './week3/item.js';
 import EventList from './week3/event-list.js';
 import Weather from './week3/weather.js';
+import NewEvent from './week4/new-item.js';
 import Contact from './contact/contact.js';
+import RegistrationForm from './registration/registration-form.js';
 
 
 export default function Home() {
@@ -18,11 +20,18 @@ export default function Home() {
 
       <Link href="week3">Week 3</Link>
 
+      <Link href="week4">Week 4</Link>
+
       <Link href="contact">Contact</Link>
 
       <EventList />
       
       <Weather />
+
+      <Link href="registration">Registration Form</Link>
+
+
+
     </main>
   )
 }

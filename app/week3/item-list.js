@@ -1,8 +1,9 @@
 import Item from "./item";
 
-export default function ItemList({name, quantity,category}) {
+export default function ItemList({img, name, quantity,category}) {
     const item1 = {
-        name: "milk, 4 L 🥛",
+        img: "🥛",
+        name: "milk, 4 L",
         quantity: 1,
         category: "dairy",
       };
@@ -75,7 +76,7 @@ export default function ItemList({name, quantity,category}) {
     
     return (
         <div>
-        <Item name={item1.name} quantity={item1.quantity} category={item1.category} />
+        <Item img={item1.img} name={item1.name} quantity={item1.quantity} category={item1.category} />
         <Item name={item2.name} quantity={item2.quantity} category={item2.category} />
         <Item name={item3.name} quantity={item3.quantity} category={item3.category} />
         <Item name={item4.name} quantity={item4.quantity} category={item4.category} />
