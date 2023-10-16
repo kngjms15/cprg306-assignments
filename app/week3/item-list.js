@@ -1,6 +1,6 @@
 import Item from "./item";
 
-export default function ItemList({img, name, quantity,category}) {
+export default function ItemList({name, quantity,category}) {
     const item1 = {
         name: "milk, 4 L 🥛",
         quantity: 1,

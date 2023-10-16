@@ -13,21 +13,20 @@ export default function ItemList({img, name, quantity,category}) {
       } else if (sortBy === "category") {
         itemsData.sort((a, b) => a.category.localeCompare(b.category));
       }
-
     
     return (
         <div>
-          <div>
-            <button
+          <div class="flex m-8">
+            <button 
               value = "name" onClick={() => setSortBy("name")}
-              className="w-full py-2 px-4 bg-sky-600 hover:bg-sky-500 rounded-md text-white"
+              class="flex-1 text-center m-4 bg-blue-100 hover:bg-blue-500 p-6 rounded-lg"
               >
               Sort By Name
             </button>
 
             <button
               value = "category" onClick={() => setSortBy("category")}
-              className="w-full py-2 px-4 bg-sky-600 hover:bg-sky-500 rounded-md text-white"
+              class="flex-1 text-center m-4 bg-blue-100 hover:bg-blue-500 p-6 rounded-lg"
               >
               Sort By Category
             </button>

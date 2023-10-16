@@ -4,7 +4,6 @@ export default function Week3() {
     return ( 
         <main>
             <ItemList />
-            
         </main>
     );
 }
