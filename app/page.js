@@ -15,21 +15,24 @@ export default function Home() {
       <div class="flex justify-center">
         <StudentInfo />
       </div>
-        <div class="flex flex-row gap-4 m-4 w-full">
-          <div class="flex-1 text-center bg-blue-100 hover:bg-blue-500 p-6 rounded-lg">
-            <Link href="week2">Week 2</Link>
+        <div class="flex flex-row gap-4 m-4 w-full items-center justify-center">
+          <div>
+            <Link href="week2" class="flex-1 text-center bg-blue-100 hover:bg-blue-500 p-6 rounded-lg">Week 2</Link>
           </div>
-          <div class="flex-1 text-center bg-blue-100 hover:bg-blue-500 p-6 rounded-lg">
-            <Link href="week3">Week 3</Link>
+          <div>
+            <Link href="week3" class="flex-1 text-center bg-blue-100 hover:bg-blue-500 p-6 rounded-lg">Week 3</Link>
           </div>
-          <div class="flex-1 text-center bg-blue-100 hover:bg-blue-500 p-6 rounded-lg">
-            <Link href="week4">Week 4</Link>
+          <div>
+            <Link href="week4" class="flex-1 text-center bg-blue-100 hover:bg-blue-500 p-6 rounded-lg">Week 4</Link>
           </div>
-          <div class="flex-1 text-center bg-blue-100 hover:bg-blue-500 p-6 rounded-lg">
-            <Link href="week5">Week 5</Link>
+          <div>
+            <Link href="week5" class="flex-1 text-center bg-blue-100 hover:bg-blue-500 p-6 rounded-lg">Week 5</Link>
+          </div>
+          <div>
+            <Link href="week6" class="flex-1 text-center bg-blue-100 hover:bg-blue-500 p-6 rounded-lg">Week 6</Link>
           </div>
         </div>
-
+        
     </main>
   )
 }
