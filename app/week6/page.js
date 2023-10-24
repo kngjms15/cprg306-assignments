@@ -19,7 +19,6 @@ export default function Week6() {
         <main>
             <h1 className="flex flex-col items-center m-4  ">Week 6</h1>
 
-
             {/* Pass the onAddItem function to the NewItem component */}
             <NewItem onAddItem={onAddItem} />
             {/* Pass the items state variable to the ItemList component */}

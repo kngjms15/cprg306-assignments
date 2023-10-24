@@ -45,9 +45,9 @@ export default function NewItem({onAddItem}) {
 
     return (
         <main>
-        <div className="min-h-screen bg-blue-gray-100 items-center justify-center">
+        <div className="bg-blue-gray-100 items-center justify-center">
             <div className="bg-gray-300 p-8 rounded-lg shadow-md">
-            <h1 className="text-2xl text-gray-800 font-bold mb-8">
+            <h1 className="text-2xl text-gray-800 font-bold mb-4">
                 Add New Item
             </h1>
             <form onSubmit={handleSubmit}>
