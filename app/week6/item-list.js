@@ -27,14 +27,14 @@ export default function ItemList({items}) {
           <button 
             value = "name" 
             onClick={() => setSortBy("name")} 
-            class="flex-1 text-center m-4 p-4 bg-blue-100 hover:bg-blue-500 rounded-lg">
+            className="flex-1 text-center m-4 p-4 bg-blue-100 hover:bg-blue-500 rounded-lg">
             Sort By Name
           </button>
 
           <button 
           value = "category" 
           onClick={() => setSortBy("category")} 
-          class="flex-1 text-center m-4 p-4 bg-blue-100 hover:bg-blue-500 rounded-lg">
+          className="flex-1 text-center m-4 p-4 bg-blue-100 hover:bg-blue-500 rounded-lg">
             Sort By Category
           </button>
 

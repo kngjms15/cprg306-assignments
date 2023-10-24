@@ -16,8 +16,9 @@ export default function Week6() {
 
 
     return ( 
-        <main>
-            <h1 className="flex flex-col items-center m-4  ">Week 6</h1>
+        <main className="bg-slate-600">
+            <h1 className="flex flex-col items-center p-8 text-3xl font-bold text-gray-300">Week 6</h1>
+            <h2 className="flex flex-col items-center p-8 text-2xl text-gray-300">My Shopping List</h2>
 
             {/* Pass the onAddItem function to the NewItem component */}
             <NewItem onAddItem={onAddItem} />
