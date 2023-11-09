@@ -97,6 +97,7 @@ export default function NewItem({onAddItem}) {
                 <select className="mt-1 p-1 block w-full rounded-md text-black bg-gray-100 focus:bg-white" 
                 required 
                 placeholder="Select Category" 
+                value={category}
                 onChange={categoryChange}>
                     <option value="Produce">Produce</option>
                     <option value="Dairy">Dairy</option>
