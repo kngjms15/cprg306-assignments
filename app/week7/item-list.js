@@ -44,7 +44,7 @@ export default function ItemList({items, onItemSelect}) {
                     Sort By Category
                 </button>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-6xl px-4">
+            <div className="w-full max-w-md px-4">
                 {sortedItems.map((item,index) => (
                     <Item
                         key={index} // assuming items does not include a unique 'id' for each item

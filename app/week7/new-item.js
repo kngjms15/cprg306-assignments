@@ -65,7 +65,7 @@ export default function NewItem({onAddItem}) {
 
 
     return (
-        <main className="min-h-screen bg-gray-50 flex flex-col items-center py-8">
+        <main className="bg-gray-50 flex flex-col items-center py-8">
             <div className="w-full mx-auto px-4">
                 <div className="w-full max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
                     <form onSubmit={handleSubmit} className="space-y-4">
