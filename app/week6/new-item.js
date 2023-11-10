@@ -12,7 +12,7 @@ export default function NewItem({onAddItem}) {
     const [quantity, setQuantity] = useState("1");
     const [category, setCategory] = useState("Produce");
 
-    
+    //handleSubmit function
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -26,18 +26,18 @@ export default function NewItem({onAddItem}) {
             return result;
           }
 
-        const newitem = {
+        let newItem = {
             "id": generateID(),
             "name": name,
             "quantity": quantity,
             "category": category,
         };  
 
-        // console.log(item);
-        // alert(`Added ${quantity} ${name} to ${category}`);
-
         //call the onAddItem function passed in as a prop
-        onAddItem(newitem);
+        onAddItem(newItem);
+
+        // console.log(item);
+        alert(`Added ${quantity} ${name} to ${category}`);
         
         //resets the form
         setName("");
@@ -127,8 +127,3 @@ export default function NewItem({onAddItem}) {
         </main>
     )
 }
-
-
-
-
-
