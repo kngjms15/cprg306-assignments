@@ -1,16 +1,20 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
-
+//added onAddItem as a prop
 export default function NewItem({onAddItem}) {
+    
 
+    // Initialize state variables
     const [name, setName] = useState("");
-    const [quantity, setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState("1");
     const [category, setCategory] = useState("Produce");
 
     
     const handleSubmit = (event) => {
+        event.preventDefault();
 
         function generateID() {
             const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -21,27 +25,28 @@ export default function NewItem({onAddItem}) {
             }
             return result;
           }
-        
-        const newItem = {
-            id: generateID(),
-            name: name,
-            quantity: quantity,
-            category: category,
+
+        const newitem = {
+            "id": generateID(),
+            "name": name,
+            "quantity": quantity,
+            "category": category,
         };  
 
-        // Call the onAddItem prop to add the dw item to the list in page.js
-        onAddItem(newItem);// Pass the new item to the onAddItem function in page.js
+        // console.log(item);
+        // alert(`Added ${quantity} ${name} to ${category}`);
 
-        event.preventDefault();
-
-
+        //call the onAddItem function passed in as a prop
+        onAddItem(newitem);
+        
+        //resets the form
         setName("");
-        setQuantity(1);
+        setQuantity("1");
         setCategory("Produce");
         
     };
 
-    // Event handlers for the form inputs
+    //event handlers for the form inputs
     const idChange = (event) => {
         setId(event.target.value);
     };
@@ -60,69 +65,70 @@ export default function NewItem({onAddItem}) {
 
 
     return (
-        <main>
-        <div className="bg-blue-gray-100 items-center justify-center">
-            <div className="bg-slate-600 p-8 shadow-md">
-            <h1 className="text-2xl text-gray-100 font-bold mb-4">
-                Add New Item
-            </h1>
-            <form onSubmit={handleSubmit}>
-                <label className="block mb-4">
-                <span className="text-gray-100" >Name:</span>
-                <input
-                    required
-                    type="text"
-                    onChange={nameChange}
-                    value={name}
-                    placeholder = "Enter item name"
-                    className="mt-1 p-1 block w-full rounded-md text-black bg-gray-100 focus:bg-white"
-                />
-                </label>
-
-                <label className="block mb-4">
-                <span className="text-gray-100">Quantity:</span>
-                <input
-                    required
-                    type="number"
-                    min="1"
-                    max="100"
-                    onChange={quantityChange}
-                    value={quantity}
-                    className="mt-1 p-1 block w-full rounded-md text-black bg-gray-100 focus:bg-white"
-                />
-                </label>
-
-                <label className="block mb-4">
-                <span className="text-gray-100">Category:</span>
-                <select className="mt-1 p-1 block w-full rounded-md text-black bg-gray-100 focus:bg-white" 
-                required 
-                placeholder="Select Category" 
-                value={category}
-                onChange={categoryChange}>
-                    <option value="Produce">Produce</option>
-                    <option value="Dairy">Dairy</option>
-                    <option value="Bakery">Bakery</option>
-                    <option value="Meat">Meat</option>
-                    <option value="Frozen Foods">Frozen Foods</option>
-                    <option value="Canned Goods">Canned Goods</option>
-                    <option value="Dry Goods">Dry Goods</option>
-                    <option value="Beverages">Beverages</option>
-                    <option value="Snacks">Snacks</option>
-                    <option value="Household">Household</option>
-                    <option value="Other">Other</option>   
-                </select>
-                </label>
-                <button
-                type="submit"
-                className="w-full py-2 px-4 bg-sky-600 hover:bg-sky-500 rounded-md text-white"
-                >
-                Add Item
-                </button>
-
-
-            </form>
+        <main className="min-h-screen bg-gray-50 flex flex-col items-center py-8">
+            <div className="w-full mx-auto px-4">
+                <div className="w-full max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <div className="text-2xl text-center text-gray-800 font-bold mb-4">
+                            Add new item
+                        </div>
+                        <div>
+                            <label className="block text-gray-800">Name:</label>
+                            
+                            <input
+                                required
+                                type="text"
+                                value={name}
+                                onChange={nameChange}
+                                placeholder="Enter item name"
+                                className="mt-1 p-1 block w-full rounded-md text-black bg-gray-100 focus:bg-white"
+                            />
+                        </div>
+                        <div>
+                            <label className="block text-gray-800">Quantity:</label>
+                            <input
+                                required
+                                type="number"
+                                value={quantity}
+                                onChange={quantityChange}
+                                placeholder="Enter quantity"
+                                className="mt-1 p-1 block w-full rounded-md text-black bg-gray-100 focus:bg-white"
+                            />
+                        </div>
+                        <div>
+                            <label className="block text-gray-800">Category:</label>
+                            <select
+                                value={category}
+                                onChange={categoryChange}
+                                className="mt-1 p-1 block w-full rounded-md text-black bg-gray-100 focus:bg-white"
+                            >
+                                <option value="Produce">Produce</option>
+                                <option value="Dairy">Dairy</option>
+                                <option value="Bakery">Bakery</option>
+                                <option value="Meat">Meat</option>
+                                <option value="Frozen Foods">Frozen Foods</option>
+                                <option value="Canned Goods">Canned Goods</option>
+                                <option value="Dry Goods">Dry Goods</option>
+                                <option value="Beverages">Beverages</option>
+                                <option value="Snacks">Snacks</option>
+                                <option value="Household">Household</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <button
+                            type="submit"
+                            className="w-full py-2 px-4 bg-blue-500 hover:bg-blue-600 rounded-md text-white"
+                        >
+                            Add Item
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
         </main>
     )
 }
+
+
+
+
+

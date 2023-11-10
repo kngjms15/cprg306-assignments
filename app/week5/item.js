@@ -1,16 +1,10 @@
-import React from 'react';
-
-
-export default function Item({name, quantity, category}) {
+export default function Item({ name, quantity, category }) {
     return (
-        
-        <div className="bg-slate-600 flex justify-center items-center">
-            <ul className="bg-gray-300 h-16 p-4 w-96 m-4 text-center rounded-lg hover:bg-blue-300">
-                <li>
-                   {name}, {quantity}, {category}
-                </li>
-            </ul>
-        </div>
-
+      <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-4 flex flex-col justify-between">
+        <h3 className="text-xl font-semibold">{name}</h3>
+        <p>Quantity: {quantity}</p>
+        <p>Category: {category}</p>
+      </div>
     );
-}   
+  }
+  
