@@ -20,10 +20,12 @@ const MealIdeas = ({ ingredient }) => {
 
   return (
     <div>
-      <h2>Meal Ideas</h2>
+      <h2 className="text-2xl text-center text-gray-800 font-bold my-16">Meal Ideas</h2>
       <ul>
         {meals.map(meal => (
-          <li key={meal.idMeal}>{meal.strMeal}</li>
+          <li 
+            className='text-xl text-gray-800 hover:text-blue-700 transition duration-300 ease-in-out font-semibold my-2'
+            key={meal.idMeal}>{meal.strMeal}</li>
         ))}
       </ul>
     </div>
