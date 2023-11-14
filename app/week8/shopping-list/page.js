@@ -8,7 +8,7 @@ import itemsData from "./items.json";
 import { useState } from "react";
 
 
-export default function Week7() {
+export default function Week8() {
     // Initialize state variables with data from items.json
     const [items, setItems] = useState(itemsData);
 
@@ -20,12 +20,28 @@ export default function Week7() {
         setItems([...items, newItem]);
     };
 
-    // Event handler that extracts the name of the selected item
-    function handleItemSelect(name) {
-        const cleanName = name.trim().split(/[\s,]+/);
-        console.log(cleanName);
-        setSelectedItemName(cleanName[0]);
-    }
+    //event handler for selecting an item
+    const handleItemSelect = (selectedItem) => {
+        // Check if selectedItem and selectedItem.name are defined
+        if (!selectedItem || !selectedItem.name) {
+            console.error('Selected item or item name is undefined');
+            return; // Exit the function if undefined
+        }
+
+        // Assuming the item object has a 'name' property
+        let cleanedName = selectedItem.name;
+
+        // Remove extra details after a comma, if any
+        cleanedName = cleanedName.split(',')[0];
+
+        // Remove emojis and extra characters
+        cleanedName = cleanedName.replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|�[�-�]|�[�-�]|[\u2011-\u26FF]|�[�-�])/g, '');
+
+        // Trim whitespace
+        cleanedName = cleanedName.trim();
+
+        setSelectedItemName(cleanedName);  
+    };
 
     return (
         <main className="min-h-screen bg-gray-50 flex flex-col py-8">

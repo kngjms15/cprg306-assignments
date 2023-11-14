@@ -89,8 +89,6 @@ export default function NewItem({onAddItem}) {
                             <input
                                 required
                                 type="number"
-                                min="1"
-                                max="99"
                                 value={quantity}
                                 onChange={quantityChange}
                                 placeholder="Enter quantity"
