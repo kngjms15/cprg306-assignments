@@ -2,7 +2,7 @@ import { db } from "../_utils/firebase";
 import { collection, getDocs, addDoc, query } from "firebase/firestore";
 
 
-
+//adding item to db
 export async function addNewItem(userId, itemObj){
     try{
         let userItemsCollectionReference = collection(db, "users", userId, "items");

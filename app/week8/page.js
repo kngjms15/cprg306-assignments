@@ -1,6 +1,7 @@
 "use client"
 
 import { useUserAuth } from "./_utils/auth-context"
+import Week8 from "app/week8/shopping-list/page.js";
 
 export default function Page(){
     const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
@@ -23,23 +24,22 @@ export default function Page(){
 
     return(
         <main className='flex flex-col items-center justify-center min-h-screen bg-gray-50'>
-            <header>
-                <h1 className="text-4xl font-bold text-blue-800 my-8">Login Page</h1>
-            </header>
 
-            <section className="max-w-sm mx-auto my-8 p-6 bg-white rounded-xl shadow-md flex flex-col items-center space-y-4">
+            <section>
                 {user ? (
                     <div className=" flex-col items-center">
-                        <p>Welcome, {user.displayName}</p>
-                      <div className=" flex gap-4">
-                        <img src={user.photoURL} className="w-24 h-24 rounded-full my-4"/>
+                        <div>
+                            <p>Welcome, {user.displayName}</p>
+                            <img src={user.photoURL} className="w-24 h-24 rounded-full my-4"/>
+                            <button 
+                                className="justify-center flex-1 my-auto py-4 text-center bg-blue-100 hover:bg-blue-300 transition duration-300 ease-in-out cursor-pointer rounded-lg"
+                                onClick={handleSignOut}>
+                                Sign Out
+                            </button>
+                        </div>
+                        <Week8 />
+                        
 
-                        <button 
-                            className="justify-center flex-1 my-auto py-4 text-center bg-blue-100 hover:bg-blue-300 transition duration-300 ease-in-out cursor-pointer rounded-lg"
-                            onClick={handleSignOut}>
-                            Sign Out
-                        </button>
-                      </div>
                     </div>
                 ) : (
                     <button 
